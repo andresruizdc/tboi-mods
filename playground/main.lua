@@ -15,19 +15,22 @@ end
 -- prints the player position.
 function mod:onPlayerMoved()
 	local pos = player.Position
-	Isaac.RenderText("X: "..pos.X.." Y: "..pos.Y, 50, 50, 1, 1, 1, 1)
+	Isaac.RenderText("X: " ..pos.X.. " Y: " ..pos.Y, 50, 50, 1, 1, 1, 1)
 end
 
--- Room
-function mod:onPlayerEnterRoom()
+-- Check room ID
+function mod:onPlayerEnterStore()
 	Game():GetRoom():SetWallColor(Color(1,1,1,1,255,0,0))
-	local roomId = Game():GetRoom().GetType()
-	Isaac.RenderText("Game"..roomId, 50, 75, 1, 1, 1, 1)
+	if Game():GetRoom():GetType() == RoomType.ROOM_SHOP then
+		Isaac.RenderText("Yes", 50, 75, 1, 1, 1, 1)
+	else
+		Isaac.RenderText("No", 50, 75, 1, 1, 1, 1)
+	end
 end
 
 -- Trigger the function "onTear()", when the "POST_FIRE_TEAR" callback is triggered.
 mod:AddCallback(ModCallbacks.MC_POST_FIRE_TEAR, mod.onTear)
 -- Trigger the function "onPlayerMoved()" whtn the "POST_PLAYER_RENDER" callback is triggered.
 mod:AddCallback(ModCallbacks.MC_POST_PLAYER_RENDER, mod.onPlayerMoved)
--- Trigger the function "onPlayerEnterRoom()" with the "POST_NEW_ROOM" callback is triggered.
-mod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, mod.onPlayerEnterRoom)
+-- Trigger the function "onPlayerEnterStore()" with the "POST_NEW_ROOM" callback is triggered.
+mod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, mod.onPlayerEnterStore)
