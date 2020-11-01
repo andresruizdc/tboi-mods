@@ -10,13 +10,13 @@ function mod:onTear(tear)
 	player:AddKeys(1) -- add a key
 	tear.TearFlags = tear.TearFlags |TearFlags.TEAR_SLOW  -- add slowing effect to the tear
 	tear:ChangeVariant(TearVariant.DARK_MATTER ) -- change appearance of the tear
-	Isaac.Explode(Isaac.GetRandomPosition(), player, 100)
 end
 
--- Prints the tear position.
+-- Prints the tear position and make explotions all the trajectory.
 function mod:onTearTrajectory(tear)
 	local pos = tear.Position
 	Isaac.RenderText("Tear - X: "..pos.X.." Y: "..pos.Y, 50, 60, 1, 1, 1, 1)
+	Isaac.Explode(pos, player, 100)
 end
 
 -- Prints the player position.
