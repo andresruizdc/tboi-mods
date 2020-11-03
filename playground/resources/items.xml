@@ -291,7 +291,7 @@
 	<active achievement="137" description="Flame on" gfx="collectibles_289_redcandle.png" id="289" maxcharges="110" name="Red Candle" />
 	<active description="Save your life" gfx="collectibles_290_thejar.png" id="290" maxcharges="0" name="The Jar" />
 	<active description="..." gfx="collectibles_291_flush.png" id="291" maxcharges="6" name="Flush!" />
-	<active achievement="126" description="Reusable evil" devilprice="2" gfx="collectibles_292_satanicbible.png" id="292" maxcharges="6" name="Satanic Bible" />
+	<active achievement="126" description="Reusable evil" devilprice="2" gfx="collectibles_292_satanicbible.png" id="292" maxcharges="0" name="Satanic Bible" />
 	<active achievement="143" description="Krampus rage" gfx="collectibles_293_headofkrampus.png" id="293" maxcharges="6" name="Head of Krampus" />
 	<active achievement="145" description="Reusable knock-back" gfx="collectibles_294_butterbean.png" id="294" maxcharges="90" name="Butter Bean" />
 	<active description="Pay to play" gfx="collectibles_295_magicfingers.png" id="295" maxcharges="0" name="Magic Fingers" />
