@@ -1,6 +1,6 @@
 -- Register the mod in the API (dont change anything here, except the name)
 local mod = RegisterMod("Dark Matter tears", 1)
-player = Isaac.GetPlayer(0) -- get the player entity
+local player = Isaac.GetPlayer(0) -- get the player entity
 
 -- Add consumables to player.
 -- And change tear effect.
