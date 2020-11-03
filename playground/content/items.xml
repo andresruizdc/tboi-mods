@@ -1,0 +1,3 @@
+<items gfxroot="gfx/items" version="1">
+  <passive description="Explosive Trail" gfx="Collectibles_Torpeedo.png" name="Torpeedo"/>
+</items>
