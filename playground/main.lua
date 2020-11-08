@@ -1,10 +1,10 @@
 -- Register the mod in the API (dont change anything here, except the name)
 local mod = RegisterMod("Dark Matter tears", 1)
-player = Isaac.GetPlayer(0) -- get the player entity
 
 -- Add consumables to player.
 -- And change tear effect.
 function mod:onTear(tear)
+	local player = Isaac.GetPlayer(0) -- get the player entity
 	player:AddCoins(1) -- add a coin
 	player:AddBombs(1) -- add a bomb
 	player:AddKeys(1) -- add a key
@@ -14,6 +14,7 @@ end
 
 -- Prints the player position.
 function mod:renderPlayerPosition()
+	local player = Isaac.GetPlayer(0) -- get the player entity
 	local pos = player.Position
 	Isaac.RenderText("Player - X: " ..pos.X.. " Y: " ..pos.Y, 50, 50, 1, 1, 1, 1)
 end
@@ -26,6 +27,7 @@ end
 
 -- Make explotions all the tear trajectory.
 function mod:makeExplosiveTrajectory(tear)
+	local player = Isaac.GetPlayer(0) -- get the player entity
 	local pos = tear.Position
 	Isaac.Explode(pos, player, 100)
 end
