@@ -1,3 +1,5 @@
-<items gfxroot="gfx/items" version="1">
-  <passive description="Explosive Trail" gfx="Collectibles_Torpeedo.png" name="Torpeedo"/>
+<items gfxroot="gfx/items/" version="1">
+  <!-- Torpeedo doesn't exists yet -->
+  <passive cache="" name="Torpeedo" description="Explosive Trail" gfx="Collectibles_Torpeedo.png"/>
+  <passive cache="" name="Green Candle" description="They are poisoned!" gfx="collectibles_ardc_greencandle.png"/>
 </items>
