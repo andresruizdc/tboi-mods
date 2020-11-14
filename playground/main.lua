@@ -1,5 +1,5 @@
 -- Register the mod in the API (dont change anything here, except the name)
-local mod = RegisterMod("Dark Matter tears", 1)
+local mod = RegisterMod("Playground", 1)
 
 -- Add consumables to player.
 -- And change tear effect.
@@ -51,6 +51,35 @@ function mod:onItemUsed()
 	Isaac.Spawn(EntityType.ENTITY_MONSTRO, 1, 0, Vector(320, 280), Vector(0, 0), player)
 end
 
+-- Green Candle, Passive Item
+mod.COLLECTIBLE_GREEN_CANDLE = Isaac.GetItemIdByName("Green Candle")
+function mod:onUpdate()
+	-- Beginning of run initialization
+	if Game():GetFrameCount() == 1 then
+		mod.HasGreenCandle = false
+		Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, mod.COLLECTIBLE_GREEN_CANDLE, Vector(320, 280), Vector(0, 0), nil)
+	end
+
+	-- Green Candle functionality
+	for playerNum = 1, Game():GetNumPlayers() do
+		local player = Game():GetPlayer(playerNum)
+		if player:HasCollectible(mod.COLLECTIBLE_GREEN_CANDLE) then
+			-- Add Sould Hearts
+			if not mod.HasGreenCandle then
+				player:AddSoulHearts(2)
+				mod.HasGreenCandle = true
+			end
+
+			-- Loop trough room entities to apply the poison
+			for i, entity in pairs(Isaac.GetRoomEntities()) do
+				if entity:IsVulnerableEnemy() and math.random(500) <= 7 then
+					entity:AddPoison(EntityRef(player), 100, 3.5)
+				end
+			end
+		end
+	end
+end
+
 -- Trigger the function "onTear()", when the "POST_FIRE_TEAR" callback is triggered.
 mod:AddCallback(ModCallbacks.MC_POST_FIRE_TEAR, mod.onTear)
 -- Trigger the function "renderPlayerPosition()", when the "POST_PLAYER_RENDER" callback is triggered.
@@ -63,3 +92,5 @@ mod:AddCallback(ModCallbacks.MC_POST_TEAR_UPDATE, mod.makeExplosiveTrajectory)
 mod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, mod.onPlayerEnterRoom)
 -- Trigger the function "onItemUsed()", when the "USE_ITEM" callback is triggered.
 mod:AddCallback(ModCallbacks.MC_USE_ITEM, mod.onItemUsed)
+-- Green Candle Callback
+mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.onUpdate)
