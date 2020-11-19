@@ -16,7 +16,7 @@ function mod:PassiveItemSaline()
 			EntityType.ENTITY_PICKUP,
 			PickupVariant.PICKUP_COLLECTIBLE,
 			mod.COLLECTIBLE_DRIP_SALINE,
-			Vector(100, 150),
+			Vector(100, 250),
 			Vector(0, 0),
 			nil
 		)
@@ -31,7 +31,7 @@ function mod:PassiveItemPotassium()
 			EntityType.ENTITY_PICKUP,
 			PickupVariant.PICKUP_COLLECTIBLE,
 			mod.COLLECTIBLE_DRIP_POTASSIUM,
-			Vector(150, 150),
+			Vector(150, 250),
 			Vector(0, 0),
 			nil
 		)
@@ -46,7 +46,22 @@ function mod:PassiveItemGlucose()
 			EntityType.ENTITY_PICKUP,
 			PickupVariant.PICKUP_COLLECTIBLE,
 			mod.COLLECTIBLE_DRIP_GLUCOSE,
-			Vector(200, 150),
+			Vector(200, 250),
+			Vector(0, 0),
+			nil
+		)
+	end
+end
+
+-- Dew, Passive Item
+function mod:PassiveItemDew()
+	-- Beginning of run initialization
+	if Game():GetFrameCount() == 1 then
+		Isaac.Spawn(
+			EntityType.ENTITY_PICKUP,
+			PickupVariant.PICKUP_COLLECTIBLE,
+			mod.COLLECTIBLE_DRIP_DEW,
+			Vector(250, 250),
 			Vector(0, 0),
 			nil
 		)
@@ -58,3 +73,4 @@ end
 mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemSaline)
 mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemPotassium)
 mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemGlucose)
+mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemDew)
