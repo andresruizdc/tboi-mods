@@ -38,7 +38,23 @@ function mod:PassiveItemPotassium()
 	end
 end
 
+-- Glucose, Passive Item
+function mod:PassiveItemGlucose()
+	-- Beginning of run initialization
+	if Game():GetFrameCount() == 1 then
+		Isaac.Spawn(
+			EntityType.ENTITY_PICKUP,
+			PickupVariant.PICKUP_COLLECTIBLE,
+			mod.COLLECTIBLE_DRIP_GLUCOSE,
+			Vector(200, 150),
+			Vector(0, 0),
+			nil
+		)
+	end
+end
+
 -- Callbacks
 -- TODO Check how to use Item Pools and add the item there.
 mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemSaline)
 mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemPotassium)
+mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemGlucose)
