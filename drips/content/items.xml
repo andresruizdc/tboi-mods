@@ -1,0 +1,8 @@
+<items gfxroot="gfx/items/" version="1">
+  <passive cache="" name="Saline" description="" gfx="collectibles_ardc_drip_saline.png"/>
+  <passive cache="" name="Potassium" description="" gfx="collectibles_ardc_drip_potassium.png"/>
+  <passive cache="" name="Glucose" description="" gfx="collectibles_ardc_drip_glucose.png"/>
+  <passive cache="" name="Dew" description="" gfx="collectibles_ardc_drip_dew.png"/>
+  <passive cache="" name="Helium" description="" gfx="collectibles_ardc_drip_helium.png"/>
+  <passive cache="" name="Sludge" description="" gfx="collectibles_ardc_drip_sludge.png"/>
+</items>
