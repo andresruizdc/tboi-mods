@@ -1,21 +1,36 @@
 local mod = RegisterMod("Drips", 1)
+local game = Game()
+local MIN_TEAR_DELAY = 5
 
--- Set Item ENUM
-mod.COLLECTIBLE_DRIP_SALINE = Isaac.GetItemIdByName("Saline Drip")
-mod.COLLECTIBLE_DRIP_POTASSIUM = Isaac.GetItemIdByName("Potassium Drip")
-mod.COLLECTIBLE_DRIP_GLUCOSE = Isaac.GetItemIdByName("Glucose Drip")
-mod.COLLECTIBLE_DRIP_DEW = Isaac.GetItemIdByName("Dew Drip")
-mod.COLLECTIBLE_DRIP_HELIUM = Isaac.GetItemIdByName("Helium Drip")
-mod.COLLECTIBLE_DRIP_SLUDGE = Isaac.GetItemIdByName("Sludge Drip")
+-- Set Item ENUMS.
+local DripId = {
+	SALINE = Isaac.GetItemIdByName("Saline Drip"),
+	POTASSIUM = Isaac.GetItemIdByName("Potassium Drip"),
+	GLUCOSE = Isaac.GetItemIdByName("Glucose Drip"),
+	DEW = Isaac.GetItemIdByName("Dew Drip"),
+	HELIUM = Isaac.GetItemIdByName("Helium Drip"),
+	SLUDGE = Isaac.GetItemIdByName("Sludge Drip")
+}
+
+-- This is for checking once in the game whether or
+-- not the player has any of our items.
+local HasDrip = {
+	saline = false,
+	potassium = false,
+	glucose = false,
+	dew = false,
+	helium = false,
+	sludge = false
+}
 
 -- Game Init
 function mod:GameInit()
 	-- Spawn items
-	if Game():GetFrameCount() == 1 then
+	if game:GetFrameCount() == 1 then
 		Isaac.Spawn(
 			EntityType.ENTITY_PICKUP,
 			PickupVariant.PICKUP_COLLECTIBLE,
-			mod.COLLECTIBLE_DRIP_SALINE,
+			DripId.SALINE,
 			Vector(100, 250),
 			Vector(0, 0),
 			nil
@@ -23,7 +38,7 @@ function mod:GameInit()
 		Isaac.Spawn(
 			EntityType.ENTITY_PICKUP,
 			PickupVariant.PICKUP_COLLECTIBLE,
-			mod.COLLECTIBLE_DRIP_POTASSIUM,
+			DripId.POTASSIUM,
 			Vector(150, 250),
 			Vector(0, 0),
 			nil
@@ -31,7 +46,7 @@ function mod:GameInit()
 		Isaac.Spawn(
 			EntityType.ENTITY_PICKUP,
 			PickupVariant.PICKUP_COLLECTIBLE,
-			mod.COLLECTIBLE_DRIP_GLUCOSE,
+			DripId.GLUCOSE,
 			Vector(200, 250),
 			Vector(0, 0),
 			nil
@@ -39,7 +54,7 @@ function mod:GameInit()
 		Isaac.Spawn(
 			EntityType.ENTITY_PICKUP,
 			PickupVariant.PICKUP_COLLECTIBLE,
-			mod.COLLECTIBLE_DRIP_DEW,
+			DripId.DEW,
 			Vector(250, 250),
 			Vector(0, 0),
 			nil
@@ -47,7 +62,7 @@ function mod:GameInit()
 		Isaac.Spawn(
 			EntityType.ENTITY_PICKUP,
 			PickupVariant.PICKUP_COLLECTIBLE,
-			mod.COLLECTIBLE_DRIP_HELIUM,
+			DripId.HELIUM,
 			Vector(300, 250),
 			Vector(0, 0),
 			nil
@@ -55,7 +70,7 @@ function mod:GameInit()
 		Isaac.Spawn(
 			EntityType.ENTITY_PICKUP,
 			PickupVariant.PICKUP_COLLECTIBLE,
-			mod.COLLECTIBLE_DRIP_SLUDGE,
+			DripId.SLUDGE,
 			Vector(350, 250),
 			Vector(0, 0),
 			nil
