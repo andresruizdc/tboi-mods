@@ -1,12 +1,12 @@
 local mod = RegisterMod("Drips", 1)
 
 -- Set Item ENUM
-mod.COLLECTIBLE_DRIP_SALINE = Isaac.GetItemIdByName("Saline")
-mod.COLLECTIBLE_DRIP_POTASSIUM = Isaac.GetItemIdByName("Potassium")
-mod.COLLECTIBLE_DRIP_GLUCOSE = Isaac.GetItemIdByName("Glucose")
-mod.COLLECTIBLE_DRIP_DEW = Isaac.GetItemIdByName("Dew")
-mod.COLLECTIBLE_DRIP_HELIUM = Isaac.GetItemIdByName("Helium")
-mod.COLLECTIBLE_DRIP_SLUDGE = Isaac.GetItemIdByName("Sludge")
+mod.COLLECTIBLE_DRIP_SALINE = Isaac.GetItemIdByName("Saline Drip")
+mod.COLLECTIBLE_DRIP_POTASSIUM = Isaac.GetItemIdByName("Potassium Drip")
+mod.COLLECTIBLE_DRIP_GLUCOSE = Isaac.GetItemIdByName("Glucose Drip")
+mod.COLLECTIBLE_DRIP_DEW = Isaac.GetItemIdByName("Dew Drip")
+mod.COLLECTIBLE_DRIP_HELIUM = Isaac.GetItemIdByName("Helium Drip")
+mod.COLLECTIBLE_DRIP_SLUDGE = Isaac.GetItemIdByName("Sludge Drip")
 
 -- Game Init
 function mod:GameInit()
