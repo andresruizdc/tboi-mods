@@ -52,6 +52,14 @@ function mod:GameInit()
 			Vector(0, 0),
 			nil
 		)
+		Isaac.Spawn(
+			EntityType.ENTITY_PICKUP,
+			PickupVariant.PICKUP_COLLECTIBLE,
+			mod.COLLECTIBLE_DRIP_SLUDGE,
+			Vector(350, 250),
+			Vector(0, 0),
+			nil
+		)
 	end
 end
 
