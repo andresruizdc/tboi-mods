@@ -1,8 +1,8 @@
 <items gfxroot="gfx/items/" version="1">
-  <passive cache="" name="Saline" description="" gfx="collectibles_ardc_drip_saline.png"/>
-  <passive cache="" name="Potassium" description="" gfx="collectibles_ardc_drip_potassium.png"/>
-  <passive cache="" name="Glucose" description="" gfx="collectibles_ardc_drip_glucose.png"/>
-  <passive cache="" name="Dew" description="" gfx="collectibles_ardc_drip_dew.png"/>
-  <passive cache="" name="Helium" description="" gfx="collectibles_ardc_drip_helium.png"/>
-  <passive cache="" name="Sludge" description="" gfx="collectibles_ardc_drip_sludge.png"/>
+  <passive cache="damage" name="Saline Drip" description="A little salty" gfx="collectibles_ardc_drip_saline.png" />
+  <passive cache="shotspeed" name="Potassium Drip" description="Smells like bananas" gfx="collectibles_ardc_drip_potassium.png" />
+  <passive cache="speed range" name="Glucose Drip" description="Sweet!" gfx="collectibles_ardc_drip_glucose.png" />
+  <passive cache="luck" name="Dew Drip" description="Cupid's companion" gfx="collectibles_ardc_drip_dew.png" />
+  <passive cache="flying" name="Helium Drip" description="Somewhat fizzy" gfx="collectibles_ardc_drip_helium.png" />
+  <passive cache="damage" name="Sludge Drip" description="It might be alive" gfx="collectibles_ardc_drip_sludge.png" />
 </items>
