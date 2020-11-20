@@ -80,7 +80,11 @@ function mod:PassiveItemDew()
 end
 
 -- Helium, Passive Item
-function mod:PassiveItemHelum()
+function mod:PassiveItemHelium()
+end
+
+-- Sludge, Passive Item
+function mod:PassiveItemSludge()
 end
 
 -- Callbacks
@@ -90,3 +94,5 @@ mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemSaline)
 mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemPotassium)
 mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemGlucose)
 mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemDew)
+mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemHelium)
+mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemSludge)
