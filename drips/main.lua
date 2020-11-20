@@ -8,9 +8,9 @@ mod.COLLECTIBLE_DRIP_DEW = Isaac.GetItemIdByName("Dew")
 mod.COLLECTIBLE_DRIP_HELIUM = Isaac.GetItemIdByName("Helium")
 mod.COLLECTIBLE_DRIP_SLUDGE = Isaac.GetItemIdByName("Sludge")
 
--- Saline, Passive Item
-function mod:PassiveItemSaline()
-	-- Beginning of run initialization
+-- Game Init
+function mod:GameInit()
+	-- Spawn items
 	if Game():GetFrameCount() == 1 then
 		Isaac.Spawn(
 			EntityType.ENTITY_PICKUP,
@@ -20,13 +20,6 @@ function mod:PassiveItemSaline()
 			Vector(0, 0),
 			nil
 		)
-	end
-end
-
--- Potassium, Passive Item
-function mod:PassiveItemPotassium()
-	-- Beginning of run initialization
-	if Game():GetFrameCount() == 1 then
 		Isaac.Spawn(
 			EntityType.ENTITY_PICKUP,
 			PickupVariant.PICKUP_COLLECTIBLE,
@@ -35,13 +28,6 @@ function mod:PassiveItemPotassium()
 			Vector(0, 0),
 			nil
 		)
-	end
-end
-
--- Glucose, Passive Item
-function mod:PassiveItemGlucose()
-	-- Beginning of run initialization
-	if Game():GetFrameCount() == 1 then
 		Isaac.Spawn(
 			EntityType.ENTITY_PICKUP,
 			PickupVariant.PICKUP_COLLECTIBLE,
@@ -50,13 +36,6 @@ function mod:PassiveItemGlucose()
 			Vector(0, 0),
 			nil
 		)
-	end
-end
-
--- Dew, Passive Item
-function mod:PassiveItemDew()
-	-- Beginning of run initialization
-	if Game():GetFrameCount() == 1 then
 		Isaac.Spawn(
 			EntityType.ENTITY_PICKUP,
 			PickupVariant.PICKUP_COLLECTIBLE,
@@ -65,11 +44,40 @@ function mod:PassiveItemDew()
 			Vector(0, 0),
 			nil
 		)
+		Isaac.Spawn(
+			EntityType.ENTITY_PICKUP,
+			PickupVariant.PICKUP_COLLECTIBLE,
+			mod.COLLECTIBLE_DRIP_HELIUM,
+			Vector(300, 250),
+			Vector(0, 0),
+			nil
+		)
 	end
+end
+
+-- Saline, Passive Item
+function mod:PassiveItemSaline()
+end
+
+-- Potassium, Passive Item
+function mod:PassiveItemPotassium()
+end
+
+-- Glucose, Passive Item
+function mod:PassiveItemGlucose()
+end
+
+-- Dew, Passive Item
+function mod:PassiveItemDew()
+end
+
+-- Helium, Passive Item
+function mod:PassiveItemHelum()
 end
 
 -- Callbacks
 -- TODO Check how to use Item Pools and add the item there.
+mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.GameInit)
 mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemSaline)
 mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemPotassium)
 mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemGlucose)
