@@ -23,6 +23,18 @@ local HasDrip = {
 	sludge = false
 }
 
+-- This is the stat's changes that every item has to do
+-- when the player picks it out.
+local DripBonus = {
+	SALINE = 3,
+	POTASSIUM = 0.5,
+	GLUCOSE_TEAR_HEIGHT = 1,
+	GLUCOSE_FALL_SPEED = 1,
+	GLUCOSE_SPEED = 0.5,
+	DEW = 5,
+	SLUDGE = 5
+}
+
 -- Game Init
 function mod:GameInit()
 	-- Spawn items
