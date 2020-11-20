@@ -64,35 +64,35 @@ function mod:GameInit()
 end
 
 -- Saline, Passive Item
-function mod:PassiveItemSaline()
+function mod:PassiveItemSalineDrip()
 end
 
 -- Potassium, Passive Item
-function mod:PassiveItemPotassium()
+function mod:PassiveItemPotassiumDrip()
 end
 
 -- Glucose, Passive Item
-function mod:PassiveItemGlucose()
+function mod:PassiveItemGlucoseDrip()
 end
 
 -- Dew, Passive Item
-function mod:PassiveItemDew()
+function mod:PassiveItemDewDrip()
 end
 
 -- Helium, Passive Item
-function mod:PassiveItemHelium()
+function mod:PassiveItemHeliumDrip()
 end
 
 -- Sludge, Passive Item
-function mod:PassiveItemSludge()
+function mod:PassiveItemSludgeDrip()
 end
 
 -- Callbacks
 -- TODO Check how to use Item Pools and add the item there.
 mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.GameInit)
-mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemSaline)
-mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemPotassium)
-mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemGlucose)
-mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemDew)
-mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemHelium)
-mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemSludge)
+mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemSalineDrip)
+mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemPotassiumDrip)
+mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemGlucoseDrip)
+mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemDewDrip)
+mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemHeliumDrip)
+mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemSludgeDrip)
