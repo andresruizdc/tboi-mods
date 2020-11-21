@@ -68,37 +68,7 @@ function mod:onUpdate(player)
 	UpdateDrips(player)
 end
 
--- Saline, Passive Item
-function mod:PassiveItemSalineDrip()
-end
-
--- Potassium, Passive Item
-function mod:PassiveItemPotassiumDrip()
-end
-
--- Glucose, Passive Item
-function mod:PassiveItemGlucoseDrip()
-end
-
--- Dew, Passive Item
-function mod:PassiveItemDewDrip()
-end
-
--- Helium, Passive Item
-function mod:PassiveItemHeliumDrip()
-end
-
--- Sludge, Passive Item
-function mod:PassiveItemSludgeDrip()
-end
-
 -- Callbacks
 -- TODO Check how to use Item Pools and add the item there.
 mod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, mod.onPlayerInit)
 mod:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, mod.onUpdate)
-mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemSalineDrip)
-mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemPotassiumDrip)
-mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemGlucoseDrip)
-mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemDewDrip)
-mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemHeliumDrip)
-mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemSludgeDrip)
