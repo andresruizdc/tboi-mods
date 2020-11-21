@@ -35,59 +35,37 @@ local DripBonus = {
 	SLUDGE = 5
 }
 
--- Game Init
-function mod:GameInit()
+-- Update inventory
+local function UpdateDrips(player)
+	HasDrip.saline = player:HasCollectible(DripId.SALINE)
+	HasDrip.potassium = player:HasCollectible(DripId.POTASSIUM)
+	HasDrip.glucose = player:HasCollectible(DripId.GLUCOSE)
+	HasDrip.dew = player:HasCollectible(DripId.DEW)
+	HasDrip.helium = player:HasCollectible(DripId.HELIUM)
+	HasDrip.sludge = player:HasCollectible(DripId.SLUDGE)
+end
+
+local function SpawnItems()
 	-- Spawn items
 	if game:GetFrameCount() == 1 then
-		Isaac.Spawn(
-			EntityType.ENTITY_PICKUP,
-			PickupVariant.PICKUP_COLLECTIBLE,
-			DripId.SALINE,
-			Vector(100, 250),
-			Vector(0, 0),
-			nil
-		)
-		Isaac.Spawn(
-			EntityType.ENTITY_PICKUP,
-			PickupVariant.PICKUP_COLLECTIBLE,
-			DripId.POTASSIUM,
-			Vector(150, 250),
-			Vector(0, 0),
-			nil
-		)
-		Isaac.Spawn(
-			EntityType.ENTITY_PICKUP,
-			PickupVariant.PICKUP_COLLECTIBLE,
-			DripId.GLUCOSE,
-			Vector(200, 250),
-			Vector(0, 0),
-			nil
-		)
-		Isaac.Spawn(
-			EntityType.ENTITY_PICKUP,
-			PickupVariant.PICKUP_COLLECTIBLE,
-			DripId.DEW,
-			Vector(250, 250),
-			Vector(0, 0),
-			nil
-		)
-		Isaac.Spawn(
-			EntityType.ENTITY_PICKUP,
-			PickupVariant.PICKUP_COLLECTIBLE,
-			DripId.HELIUM,
-			Vector(300, 250),
-			Vector(0, 0),
-			nil
-		)
-		Isaac.Spawn(
-			EntityType.ENTITY_PICKUP,
-			PickupVariant.PICKUP_COLLECTIBLE,
-			DripId.SLUDGE,
-			Vector(350, 250),
-			Vector(0, 0),
-			nil
-		)
+		Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, DripId.SALINE, Vector(100, 250), Vector(0, 0), nil)
+		Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, DripId.POTASSIUM, Vector(150, 250), Vector(0, 0), nil)
+		Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, DripId.GLUCOSE, Vector(200, 250), Vector(0, 0), nil)
+		Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, DripId.DEW, Vector(250, 250), Vector(0, 0), nil)
+		Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, DripId.HELIUM, Vector(300, 250), Vector(0, 0), nil)
+		Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, DripId.SLUDGE, Vector(350, 250), Vector(0, 0), nil)
 	end
+end
+
+-- When the run starts or continues
+function mod:onPlayerInit(player)
+	UpdateDrips(player)
+end
+
+-- When passive effects should update
+function mod:onUpdate(player)
+	SpawnItems()
+	UpdateDrips(player)
 end
 
 -- Saline, Passive Item
@@ -116,7 +94,8 @@ end
 
 -- Callbacks
 -- TODO Check how to use Item Pools and add the item there.
-mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.GameInit)
+mod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, mod.onPlayerInit)
+mod:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, mod.onUpdate)
 mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemSalineDrip)
 mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemPotassiumDrip)
 mod:AddCallback(ModCallbacks.MC_POST_UPDATE, mod.PassiveItemGlucoseDrip)
