@@ -1,5 +1,18 @@
 -- Register the mod in the API (dont change anything here, except the name)
 local mod = RegisterMod("Playground", 1)
+local game = Game()
+
+-- local functions
+local function GiveItemToPlayer()
+	if game:GetFrameCount() == 1 then
+		-- Random number between 1 and 552
+		-- Give random item to player
+		local player = game:GetPlayer(0)
+		local item = math.random(1, 552)
+		Isaac.DebugString(item)
+		player:AddCollectible(item, 300, false)
+	end
+end
 
 -- Add consumables to player.
 -- And change tear effect.
@@ -29,7 +42,7 @@ end
 function mod:makeExplosiveTrajectory(tear)
 	local player = Isaac.GetPlayer(0) -- get the player entity
 	local pos = tear.Position
-	Isaac.Explode(pos, player, 100)
+	-- Isaac.Explode(pos, player, 100)
 end
 
 -- Check room ID, if it's a Store it'll spawn an item.
@@ -51,6 +64,10 @@ function mod:onItemUsed()
 	Isaac.Spawn(EntityType.ENTITY_MONSTRO, 1, 0, Vector(320, 280), Vector(0, 0), player)
 end
 
+function mod:onUpdate()
+	GiveItemToPlayer()
+end
+
 -- Trigger the function "onTear()", when the "POST_FIRE_TEAR" callback is triggered.
 mod:AddCallback(ModCallbacks.MC_POST_FIRE_TEAR, mod.onTear)
 -- Trigger the function "renderPlayerPosition()", when the "POST_PLAYER_RENDER" callback is triggered.
@@ -63,3 +80,5 @@ mod:AddCallback(ModCallbacks.MC_POST_TEAR_UPDATE, mod.makeExplosiveTrajectory)
 mod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, mod.onPlayerEnterRoom)
 -- Trigger the function "onItemUsed()", when the "USE_ITEM" callback is triggered.
 mod:AddCallback(ModCallbacks.MC_USE_ITEM, mod.onItemUsed)
+-- Trigger the function "onUpdate()"
+mod:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, mod.onUpdate)
