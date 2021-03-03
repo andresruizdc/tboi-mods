@@ -8,6 +8,9 @@ You'll need a [copy](https://store.steampowered.com/bundle/2405/The_Binding_of_I
 In the playground directory you'll find small scripts to do funny things, just
 play with it.
 
+- Modify Sound/Music
+  - [Sound Test](https://github.com/Andrsrz/tboi-mods/tree/master/sound-test)
+
 - Passive Items
   - [Green Candle](https://github.com/Andrsrz/tboi-mods/tree/master/green-candle)
   - [Drips!](https://github.com/Andrsrz/tboi-mods/tree/master/drips)
