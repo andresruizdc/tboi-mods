@@ -189,7 +189,7 @@
 	</sound>
 	<sound id="84">
 		<sample weight="1" path="Mom/evil laugh.wav" />
-		<sample weight="1" path="Mom/evil-man.wav" />
+		<sample weight="1" path="Mom/kid laugh.wav" />
 	</sound>
 	<sound id="85">
 		<sample weight="1" path="Mom/filter death 1.wav" />
