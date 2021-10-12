@@ -1,7 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-  <name>red-key-run</name>
-  <directory>red-key-run</directory>
-  <description/>
-  <version>1.0</version>
-  <visibility/>
+    <name>red-key-run</name>
+    <directory>red-key-run</directory>
+    <id>2621488653</id>
+    <description>Red Key Run
+Mod Request for unspunreality
+
+Begin every run with the Red Key active object</description>
+    <version>1.1</version>
+    <visibility>Public</visibility>
+    <tag id="Tweaks"/>
 </metadata>
