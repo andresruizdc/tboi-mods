@@ -15,6 +15,9 @@ play with it.
   - [Green Candle](https://github.com/Andrsrz/tboi-mods/tree/develop/green-candle)
   - [Drips!](https://github.com/Andrsrz/tboi-mods/tree/develop/drips)
 
+- Enemies
+  - [Dips](https://github.com/MochicStudio/tboi-mods/tree/feature/dips/dips)
+
 - Mod Requests
   - [Red Key Run, requested by unspunreality](https://github.com/Andrsrz/tboi-mods/tree/develop/red-key-run)
 
