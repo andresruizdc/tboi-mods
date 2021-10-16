@@ -15,6 +15,9 @@ play with it.
   - [Green Candle](https://github.com/Andrsrz/tboi-mods/tree/develop/green-candle)
   - [Drips!](https://github.com/Andrsrz/tboi-mods/tree/develop/drips)
 
+- Pocket Items
+  - [Crazy Pills](https://github.com/MochicStudio/tboi-mods/tree/feature/crazy-pills/crazy-pills)
+
 - Mod Requests
   - [Red Key Run, requested by unspunreality](https://github.com/Andrsrz/tboi-mods/tree/develop/red-key-run)
 
