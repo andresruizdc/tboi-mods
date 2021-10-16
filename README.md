@@ -16,7 +16,7 @@ play with it.
   - [Drips!](https://github.com/Andrsrz/tboi-mods/tree/develop/drips)
 
 - Pocket Items
-  - [Crazy Pills](https://github.com/MochicStudio/tboi-mods/tree/feature/crazy-pills/crazy-pills)
+  - [Crazy Pills](https://github.com/MochicStudio/tboi-mods/tree/develop/crazy-pills)
 
 - Mod Requests
   - [Red Key Run, requested by unspunreality](https://github.com/Andrsrz/tboi-mods/tree/develop/red-key-run)
