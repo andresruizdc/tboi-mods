@@ -1,0 +1,9 @@
+<entities anm2root="gfx/" version="5">
+  <entity id="217" variant="524506882" name="Dot" reroll="true" baseHP="15" stageHP="6" boss="0" champion="0" 
+  collisionDamage="1" collisionMass="6" collisionRadius="9" friction="1" numGridCollisionPoints="12" shadowSize="12" portrait="85" 
+  anm2path="216.000_Dip.anm2">
+    <bestiary transform="0,0,1" anim="Idle" />
+    <gibs amount="5" blood="0" bone="0" eye="0" gut="0" large="0" poop="1" />
+    <preload-snd id="60" /> <!-- SOUND_BABY_HURT -->
+  </entity>
+</entities>
