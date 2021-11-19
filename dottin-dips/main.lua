@@ -38,15 +38,16 @@ function hsb2rgb(hue, saturation, brightness, alpha)
 	end
 end
 
-function Dots:onUpdate(player)
-	if game:GetFrameCount() == 1 then
-		for x = 0,2 do
-			for y = 0,2 do
-				Isaac.Spawn(EntityType.ENTITY_DIP, 0, 0, Vector(270 + 50 * x, 200 + 50 * y), Vector(0,0), nil)
-			end
-		end
-	end
-end
+-- Only for debug
+-- function Dots:onUpdate(player)
+-- 	if game:GetFrameCount() == 1 then
+-- 		for x = 0,2 do
+-- 			for y = 0,2 do
+-- 				Isaac.Spawn(EntityType.ENTITY_DIP, 0, 0, Vector(270 + 50 * x, 200 + 50 * y), Vector(0,0), nil)
+-- 			end
+-- 		end
+-- 	end
+-- end
 
 function Dots:NPCUpdate(Dip)
 	local DipData = Dip:GetData()
@@ -75,5 +76,6 @@ function Dots:NPCUpdate(Dip)
 	end
 end
 
-mod:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, Dots.onUpdate)
+-- Only for debug
+-- mod:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, Dots.onUpdate)
 mod:AddCallback(ModCallbacks.MC_NPC_UPDATE, Dots.NPCUpdate, EntityType.ENTITY_DIP)
