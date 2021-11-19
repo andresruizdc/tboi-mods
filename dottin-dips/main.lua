@@ -4,7 +4,7 @@ local game = Game()
 local DipVariant = {
 	DOT = Isaac.GetEntityVariantByName("Dot")
 }
-local DOT_CHANCE = 50
+local DOT_CHANCE = 25
 local Dots = {}
 
 function hsb2rgb(hue, saturation, brightness, alpha)
@@ -48,4 +48,32 @@ function Dots:onUpdate(player)
 	end
 end
 
+function Dots:NPCUpdate(Dip)
+	local DipData = Dip:GetData()
+
+	if type(DipData) == "table" and DipData.DipInit == nil and Dip:IsActiveEnemy() then
+		DipData.DipInit = true
+		if Dip.Variant == 0 and math.random(50) <= DOT_CHANCE then
+			local NewDip = Isaac.Spawn(EntityType.ENTITY_DIP, DipVariant.DOT, 0, Dip.Position, Vector(0,0), nil)
+			NewDip:SetColor(hsb2rgb(math.random(100)/100, 1, 1, 1), 0, 0, false, false)
+			NewDip:GetData().DipInit = true
+			Dip:Remove()
+
+			-- If your enemy variant has the same HP as the neutral one you can use Morph
+			-- Dip:Morph(EntityType.ENTITY_DIP, DipVariant.DOT, 0, 0)
+		end
+
+		-- If you spawn variant from a room type, we set the color. Not on this case.
+		-- if Dip.Variant == DipVariant.DOT then
+		-- 	Dip:SetColor(hsb2rgb(math.random(100)/100, 1, 1, 1), 0, 0, false, false)
+		-- end
+	end
+
+	-- AI, kind of
+	if Dip.Variant == DipVariant.DOT and Dip:GetPlayerTarget() ~= nil then
+		Dip.Velocity = (Dip:GetPlayerTarget().Position - Dip.Position):Normalized() * Dip.Velocity:Length()
+	end
+end
+
 mod:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, Dots.onUpdate)
+mod:AddCallback(ModCallbacks.MC_NPC_UPDATE, Dots.NPCUpdate, EntityType.ENTITY_DIP)
