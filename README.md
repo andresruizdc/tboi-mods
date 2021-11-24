@@ -23,6 +23,9 @@ Some of these mods are from the [Lyte tutorials](https://www.youtube.com/playlis
 - Enemy Variants
   - [Dottin Dips](https://github.com/MochicStudio/tboi-mods/tree/develop/dottin-dips)
 
+- Characters
+  - [Kraken](https://github.com/MochicStudio/tboi-mods/tree/develop/kraken)
+
 - Mod Requests
   - [Red Key Run, requested by unspunreality](https://github.com/MochicStudio/tboi-mods/tree/develop/red-key-run)
 

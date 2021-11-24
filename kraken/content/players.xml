@@ -1,0 +1,10 @@
+<players root="gfx/characters/costumes/" 
+         portraitroot="gfx/ui/boss/" 
+         nameimageroot="gfx/ui/boss/" 
+         bigportraitroot="gfx/ui/stage/">
+	<player name="Kraken" skin="character_c01_kraken.png" hp="4" bombs="2" items="105"
+          nameimage="PlayerName_01_Isaac.png" 
+          portrait="PlayerPortrait_01_Isaac.png" 
+          bigportrait="PlayerPortraitBig_01_Isaac.png" skinColor="-1"
+		  birthright="not done" />
+</players>
